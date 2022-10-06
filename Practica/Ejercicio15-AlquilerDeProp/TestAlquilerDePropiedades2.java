@@ -1,7 +1,7 @@
 package TestAlquilerDePropiedades;
 
 import ejercicio15.alquilerdepropiedades.DateLapse;
-import ejercicio15.alquilerdepropiedades.Estricta;
+import ejercicio15.alquilerdepropiedades.Moderada;
 import ejercicio15.alquilerdepropiedades.OOBnB;
 import ejercicio15.alquilerdepropiedades.Propiedad;
 import ejercicio15.alquilerdepropiedades.Reserva;
@@ -14,11 +14,11 @@ public class TestAlquilerDePropiedades {
         
         OOBnB bnb = new OOBnB();
         
-        DateLapse lapso1 = new DateLapse(LocalDate.of(2021, 12, 1),
-            LocalDate.of(2021, 12, 10));// Del 1 al 10 de diciembre - 9 días
+        DateLapse lapso1 = new DateLapse(LocalDate.of(2022, 12, 2),
+            LocalDate.of(2022, 12, 10));// Del 1 al 10 de diciembre - 9 días
         
-        Usuario usuario1 = new Usuario("Marianella","Calle 46",43254904);
-        Propiedad propiedad1 = new Estricta("Casa","Con garage",200,usuario1,"Calle 55");
+        Usuario usuario1 = new Usuario("Marianella","Calle 47",43254904);
+        Propiedad propiedad1 = new Moderada("Casa","Con garage",200,usuario1,"Calle 55");
         Reserva reserva1 = new Reserva(lapso1,propiedad1);
         
         bnb.registrarUsuario(usuario1);
@@ -31,6 +31,9 @@ public class TestAlquilerDePropiedades {
         System.out.println(usuario1.getReservas().get(0).getPeriodo().getFrom());
         System.out.println(usuario1.getReservas().get(0).getPeriodo().getTo());
         System.out.println(usuario1.getReservas().get(0).calcularPrecio());
+        
+        System.out.println(propiedad1.calcularReembolso(reserva1, LocalDate.of(2022, 11, 29)));
+        
     }
-    
+
 }
