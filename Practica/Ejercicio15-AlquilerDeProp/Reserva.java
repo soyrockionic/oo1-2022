@@ -22,5 +22,9 @@ public class Reserva {
 	return this.propiedad.getPrecioPorNoche() * this.periodo.sizeInDays();
     }
     
+    public void eliminarse(){
+        OOBnB bnb = new OOBnB();
+        bnb.eliminarReserva(this);
+    }
         
 }
