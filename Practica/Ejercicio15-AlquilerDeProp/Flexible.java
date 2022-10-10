@@ -16,4 +16,5 @@ public class Flexible extends Propiedad{
 	    return 0;
     }
 
+
 }
