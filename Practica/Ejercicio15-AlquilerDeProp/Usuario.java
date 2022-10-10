@@ -19,6 +19,10 @@ public class Usuario {
         this.propiedades = new ArrayList<Propiedad>();
         this.reservas = new ArrayList<Reserva>();
     }
+    
+    public Usuario(){
+        
+    }
 	
     public ArrayList<Reserva> getReservas(){
 	return this.reservas;

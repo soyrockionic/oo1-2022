@@ -9,6 +9,10 @@ public class OOBnB {
     
     private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     private ArrayList<Propiedad> propiedades = new ArrayList<Propiedad>();
+    
+    public OOBnB(){
+        
+    }
 	
     public ArrayList<Usuario> getUsuarios(){
 	return this.usuarios;
@@ -29,8 +33,8 @@ public class OOBnB {
     public void hacerReserva(DateLapse periodo, Propiedad propiedad, Usuario usuario) {
 	if(propiedad.estaDisponible(periodo)) {
             Reserva reserva = new Reserva(periodo, propiedad);
-            usuarios.get(usuarios.indexOf(usuario)).hacerReserva(reserva);
-            propiedades.get(propiedades.indexOf(propiedad)).agregarReserva(reserva);
+            usuario.hacerReserva(reserva);
+            propiedad.agregarReserva(reserva);
 	}
     }
 	

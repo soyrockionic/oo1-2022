@@ -21,6 +21,9 @@ public class Reserva {
     public double calcularPrecio() {
 	return this.propiedad.getPrecioPorNoche() * this.periodo.sizeInDays();
     }
-
+    
+    public String toString(){
+        return periodo.getFrom() + " " + periodo.getTo();
+    }
         
 }

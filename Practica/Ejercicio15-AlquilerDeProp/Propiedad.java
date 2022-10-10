@@ -2,6 +2,7 @@ package ejercicio15.alquilerdepropiedades;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,10 @@ public abstract class Propiedad {
 	this.fechasOcupadas = new ArrayList<Reserva>();
     }
 	
+    public Propiedad(){
+        
+    }
+    
     public boolean estaDisponible(DateLapse periodo) {
 	List<Boolean> f = fechasOcupadas.stream()
 			.map(r -> r.getPeriodo().equals(periodo))
@@ -46,7 +51,7 @@ public abstract class Propiedad {
     }
 	
     public ArrayList<Reserva> getReservas(){
-	return (ArrayList<Reserva>) this.fechasOcupadas;
+	return  (ArrayList<Reserva>) this.fechasOcupadas;
     }
 	
     public abstract double calcularReembolso(Reserva reserva, LocalDate fecha);
