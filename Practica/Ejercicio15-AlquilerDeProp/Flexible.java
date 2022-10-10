@@ -11,7 +11,6 @@ public class Flexible extends Propiedad{
     @Override
     public double calcularReembolso(Reserva reserva, LocalDate fecha) {
 	if(fecha.isBefore(reserva.getPeriodo().getFrom())){
-            reserva.eliminarse();
 	    return reserva.calcularPrecio();
         }else
 	    return 0;
