@@ -1,12 +1,13 @@
 package TestAlquilerDePropiedades;
 
 import ejercicio15.alquilerdepropiedades.DateLapse;
-import ejercicio15.alquilerdepropiedades.Moderada;
+import ejercicio15.alquilerdepropiedades.Flexible;
 import ejercicio15.alquilerdepropiedades.OOBnB;
 import ejercicio15.alquilerdepropiedades.Propiedad;
 import ejercicio15.alquilerdepropiedades.Reserva;
 import ejercicio15.alquilerdepropiedades.Usuario;
 import java.time.LocalDate;
+import java.util.Iterator;
 
 public class TestAlquilerDePropiedades {
     
@@ -14,26 +15,32 @@ public class TestAlquilerDePropiedades {
         
         OOBnB bnb = new OOBnB();
         
-        DateLapse lapso1 = new DateLapse(LocalDate.of(2022, 12, 2),
-            LocalDate.of(2022, 12, 10));// Del 1 al 10 de diciembre - 9 días
+        DateLapse lapso1 = new DateLapse(LocalDate.of(2022, 10, 2),
+            LocalDate.of(2022, 10, 10));// Del 1 al 10 de diciembre - 9 días
         
-        Usuario usuario1 = new Usuario("Marianella","Calle 47",43254904);
-        Propiedad propiedad1 = new Moderada("Casa","Con garage",200,usuario1,"Calle 55");
+        Usuario inquilino = new Usuario("Marianella","Calle 47",43254904);
+        Propiedad propiedad1 = new Flexible("Casa","Con garage",200,inquilino,"Calle 55");
         Reserva reserva1 = new Reserva(lapso1,propiedad1);
         
-        bnb.registrarUsuario(usuario1);
+        bnb.registrarUsuario(inquilino);
         bnb.registrarPropiedad(propiedad1);
-        usuario1.registrarPropiedad(propiedad1);
-        bnb.hacerReserva(lapso1,propiedad1,usuario1);
+        inquilino.registrarPropiedad(propiedad1);
+        inquilino.hacerReserva(reserva1);
         
-        System.out.println(bnb.calcularIngresos(usuario1, LocalDate.MAX, LocalDate.MAX));
-        System.out.println(reserva1.calcularPrecio());
-        System.out.println(usuario1.getReservas().get(0).getPeriodo().getFrom());
-        System.out.println(usuario1.getReservas().get(0).getPeriodo().getTo());
-        System.out.println(usuario1.getReservas().get(0).calcularPrecio());
+        propiedad1.agregarReserva(reserva1);
         
-        System.out.println(propiedad1.calcularReembolso(reserva1, LocalDate.of(2022, 11, 29)));
+        System.out.println("Ingresos:      " + bnb.calcularIngresos(inquilino, LocalDate.MAX, LocalDate.MAX));
+        System.out.println("Reserva:       " + reserva1.calcularPrecio());
+        System.out.println("Reembolso:     " + propiedad1.calcularReembolso(reserva1, LocalDate.of(2022, 9, 29)));
         
-    }
+        bnb.eliminarReserva(reserva1);
+        
+        Iterator it = inquilino.getReservas().iterator();
+        while(it.hasNext())
+            System.out.println(it.next());
+        
+        System.out.println("Cant Reservas: " + inquilino.getReservas().size());
+        
+        }
 
 }
