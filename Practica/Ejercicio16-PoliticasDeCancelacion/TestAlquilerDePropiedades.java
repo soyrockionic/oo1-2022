@@ -16,7 +16,7 @@ public class TestAlquilerDePropiedades {
         OOBnB bnb = new OOBnB();
         
         DateLapse lapso1 = new DateLapse(LocalDate.of(2022, 10, 2),
-            LocalDate.of(2022, 10, 10));// Del 1 al 10 de diciembre - 9 días
+            LocalDate.of(2022, 10, 10));
         
         Usuario dueño = new Usuario("Marianella","Calle 47",43254904);
         bnb.registrarUsuario(dueño);
