@@ -25,6 +25,5 @@ public class LapsoDeTiempoTest {
                            fromTo2.includesDate(LocalDate.of(2022,9,21)));
        
     }       
-   
     
 }
