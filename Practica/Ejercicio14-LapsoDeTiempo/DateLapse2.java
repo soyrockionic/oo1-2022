@@ -45,5 +45,4 @@ public class DateLapse2 implements Interface {
 	this.sizeInDays = sizeInDays;
     }
         
-
 }
