@@ -26,14 +26,15 @@ public class TestAlquilerDePropiedades {
             
         Usuario inquilino = new Usuario("Juan","Calle 47",43254904);
         bnb.registrarUsuario(inquilino);
-        inquilino.registrarPropiedad(prop);
+        dueño.registrarPropiedad(prop);
         Reserva reserva1 = new Reserva(lapso1,prop);
         inquilino.hacerReserva(reserva1);
              
         prop.agregarReserva(reserva1);
         
         System.out.println("Cant Reservas: " + inquilino.getReservas().size());
-        System.out.println("Ingresos:      " + bnb.calcularIngresos(dueño, LocalDate.MAX, LocalDate.MAX));
+        System.out.println("Ingresos:      " + bnb.calcularIngresos(dueño, LocalDate.of(2022, 10, 2),
+                                               LocalDate.of(2022, 10, 10)));
         System.out.println("Reserva:       " + reserva1.calcularPrecio());
         System.out.println("Reembolso:     " + prop.CancelarReserva(reserva1, LocalDate.of(2022, 9, 29)));
         
@@ -45,6 +46,6 @@ public class TestAlquilerDePropiedades {
         
         System.out.println("Cant Reservas: " + inquilino.getReservas().size());
         
-        }
-
+    }
+    
 }
