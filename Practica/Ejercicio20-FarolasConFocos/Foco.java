@@ -25,5 +25,6 @@ public class Foco {
     public String toString(){
         return this.fabricante + " Cant. Ciclos " + this.cantidadDeCiclos;
     }
+
 	
 }
