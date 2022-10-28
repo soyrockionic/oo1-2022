@@ -67,15 +67,7 @@ public class Farola {
     public boolean isOn() {
 	return estado;
     }
-	
-    /*
-     * Retorna una lista con las farolas que están en la red de la farola receptora
-     * y que poseen focos vencidos. Incluyendo el chequeo entre las farolas vecinas
-     * y las vecinas de estas propagando en toda la red.
-     */
-    public /*List<Farola>**/ String farolasConFocosVencidos(){
-	return "En proceso de desarrollo";
-    } 
+    
     
     public String toString(){
         return foco.toString();
