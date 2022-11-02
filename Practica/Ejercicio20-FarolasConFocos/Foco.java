@@ -26,5 +26,4 @@ public class Foco {
         return this.fabricante + " Cant. Ciclos " + this.cantidadDeCiclos;
     }
 
-
 }

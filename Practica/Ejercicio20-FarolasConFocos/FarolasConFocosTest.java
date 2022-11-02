@@ -34,7 +34,7 @@ public class FarolasConFocosTest {
         System.out.println(farolaUno.isOn());
         System.out.println(farolaDos.isOn());*/
         
-        System.out.print(farolaUno.FarolasConFocosVencidos());
+        System.out.println(farolaUno.FarolasConFocosVencidos());
 
     } 
     
