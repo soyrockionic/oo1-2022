@@ -68,6 +68,24 @@ public class Farola {
 	return estado;
     }
     
+    private List<Farola> conseguirRedFarolas(List<Farola> lista){
+	if (!lista.contains(this)) {
+	    lista.add(this);
+	    this.neighbors.stream().forEach(farola -> farola.conseguirRedFarolas(lista));
+	}
+        return lista;	
+    }
+    
+    /*
+     * Retorna una lista con las farolas que están en la red de la farola
+       receptora y que poseen focos vencidos. Incluyendo el chequeo entre las
+       farolas vecinas y las vecinas de estas propagando en toda la red.
+    */
+    public List<Farola> FarolasConFocosVencidos(){
+	List<Farola> lista = new ArrayList<Farola>();
+	this.conseguirRedFarolas(lista);
+	return lista.stream().filter(farola -> farola.foco.estaVencido()).collect(Collectors.toList());
+    }
     
     public String toString(){
         return foco.toString();

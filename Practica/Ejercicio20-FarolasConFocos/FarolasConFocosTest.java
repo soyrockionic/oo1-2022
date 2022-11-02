@@ -6,8 +6,8 @@ public class FarolasConFocosTest {
     
    public static void main(String[] args) {
         
-        Farola farolaUno = new Farola("PHILIPS", 2);
-	Farola farolaDos = new Farola("LUMITH", 1);
+        Farola farolaUno = new Farola("PHILIPS", 3);
+	Farola farolaDos = new Farola("LUMITH", 2);
         
         farolaUno.pairWithNeighbor(farolaDos);
         System.out.println(farolaUno.getNeighbors().contains(farolaDos));
@@ -33,8 +33,9 @@ public class FarolasConFocosTest {
         /*farolaDos.turnOff();
         System.out.println(farolaUno.isOn());
         System.out.println(farolaDos.isOn());*/
-
         
+        System.out.print(farolaUno.FarolasConFocosVencidos());
+
     } 
     
 }
