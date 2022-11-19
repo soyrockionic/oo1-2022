@@ -1,0 +1,31 @@
+//Devuelve la suma del costo de todas la mejoras del barrio
+public double costoPorLote(){
+    double total = this.getMejoras().stream().mapToDouble(m -> m.getCosto()).sum();
+    return (total / this.getCantLotes()) + 30000 + (total * this.porcentaje);
+}
+
+//Devuelve el total de lostes a urbanizar
+public int TotalLotesAUrbanizar(){
+    return (int) barrios.stream().mapToInt(lote -> lote.getCantLotes()).sum();
+}
+//Devuelve el total de la inversion de todos los barrios    
+public double TotalInversion(){
+    return barrios.stream().mapToDouble(m -> m.CostoTotal()).sum();
+}
+
+//Devuelve la cantidad de barrios a urbanizar
+public int TotalInversion(){
+    return (int) barrios.stream().mapToInt(m -> m.getCantLotes()).count();
+}
+
+//Devuelve la cantidad de reproducciones del podcast con mas reproducciones
+public int PodcastMasReproducido(){
+    return autores.stream().mapToInt(a->a.MasReproducido()).max().orElse(0);
+}
+
+// obtener un usuario con la edad máxima
+User user2 = users.stream().max(Comparator.comparingInt(User::getAge)).get();
+
+ 
+// obtener un usuario con la edad máxima
+User user2 = users.stream().collect(Collectors.maxBy(Comparator.comparingInt(User::getAge))).get();
