@@ -31,4 +31,6 @@ public abstract class Vehiculo implements Item{
         return ChronoUnit.YEARS.between(getFechaFab(),LocalDate.now()) < 10;
     }
     
+    public abstract double CalcularMonto();
+    
 }
