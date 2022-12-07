@@ -2,7 +2,6 @@ package calculadoraDeImpuestoTest;
 
 import calculadoradeimpuestos.Sistema;
 import java.time.LocalDate;
-import java.time.Month;
 
 public class CalculadoraTest {
     
@@ -25,8 +24,10 @@ public class CalculadoraTest {
         c.DarAltaInmueble("524", 10000, 70000, c.buscarContribuyente("506"));
         c.DarAltaEmbarcacion("ABC123", "Crucero", LocalDate.of(2018, 11, 6) , 120000, c.buscarContribuyente("506"));
         
-        System.out.println(c.CalcularTotalImpuestos(c.buscarContribuyente("604")));
-    
+        System.out.println("Total a pagar por Juan:   " + c.CalcularTotalImpuestos(c.buscarContribuyente("604")));
+        System.out.println("Cant de bienes de Pirita: " + c.buscarContribuyente("506").getBienes().size());
+        System.out.println("Cant contribuyentes:      " + c.getContribuyentes().size());
+        System.out.println("--------------------------------");
         c.ContribuyentesQueMasPagan("La Plata",5).forEach(System.out::println);
     
     }

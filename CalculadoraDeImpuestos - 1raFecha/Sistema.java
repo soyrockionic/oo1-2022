@@ -42,6 +42,10 @@ public class Sistema {
         return this.contribuyentes.stream().filter(c -> c.getDni().equals(DNI)).findFirst().orElse(null);
     }
     
+    public List<Contribuyente> getContribuyentes(){
+        return this.contribuyentes;
+    }
+    
     public double CalcularTotalImpuestos(Contribuyente c){
         return contribuyentes.get(contribuyentes.indexOf(c)).calcularMontoTotal();
     }
