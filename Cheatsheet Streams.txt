@@ -4,7 +4,7 @@ public double costoPorLote(){
     return (total / this.getCantLotes()) + 30000 + (total * this.porcentaje);
 }
 
-//Devuelve el total de lostes a urbanizar
+//Devuelve el total de lotes a urbanizar
 public int TotalLotesAUrbanizar(){
     return (int) barrios.stream().mapToInt(lote -> lote.getCantLotes()).sum();
 }
