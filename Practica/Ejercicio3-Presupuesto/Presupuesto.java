@@ -30,17 +30,19 @@ public class Presupuesto extends Object{
         items.add(item);
     }
     
-    public double calcularTotal(){
-        double total = 0;
-        for(Item i:items){
-            total = total + i.costo();
-        }
-        return total;
+    public double calcularTotal() {
+        return items.stream()
+                        .mapToDouble(Item::costo)  // Mapea cada item a su costo
+                        .sum();                    // Suma todos los costos
     }
     
     public Presupuesto cliente(String cliente) {
 	this.setCliente(cliente);
 	return this;
+    }
+    
+    public ArrayList<Item> getItems(){
+        return items;
     }
     
 }
