@@ -8,7 +8,7 @@ public class ProductoTest {
         
         Producto queso = new Producto();      
         queso.setPeso(0.5);
-        queso.setPrecioPorKilo(140);
+        queso.setPrecioPorKilo(140.0);
         queso.setDescripcion("Queso");
         
         System.out.println("Descripcion: " + queso.getDescripcion());

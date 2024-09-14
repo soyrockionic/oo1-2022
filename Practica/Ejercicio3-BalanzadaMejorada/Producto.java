@@ -2,37 +2,45 @@ package ejercicio3.balanzamejorada;
 
 public class Producto extends Object {
 	
-	private double peso;
-	private double precioPorKilo;
-	private String descripcion;
-	
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
+    private double peso;
+    private double precioPorKilo;
+    private String descripcion;
 
-	public void setPrecioPorKilo(int kilo) {
-		this.precioPorKilo = kilo;
-	}
+    public Producto(String descripcion, double peso, double precioPorKilo) {
+        this.peso = peso;
+        this.precioPorKilo = precioPorKilo;
+        this.descripcion = descripcion;
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public Producto() {
+    }
+              
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
 
-	public String getDescripcion() {
-		return this.descripcion;
-	}
+    public void setPrecioPorKilo(double precio) {
+        this.precioPorKilo = precio;
+    }
 
-	public Double getPeso() {
-		return this.peso;
-	}
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public double getPrecioPorKilo() {
-		return this.precioPorKilo;
-	}
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public double getPrecio() {
-		return (this.getPeso() * this.getPrecioPorKilo());
-	}
-	
+    public Double getPeso() {
+        return this.peso;
+    }
+
+    public double getPrecioPorKilo() {
+        return this.precioPorKilo;
+    }
+
+    public double getPrecio() {
+        return (this.getPeso() * this.getPrecioPorKilo());
+    }	
 	
 }
